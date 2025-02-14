@@ -1,6 +1,7 @@
 <?php
 
-$isloggedin = false;
+session_start();
+require './includes/auth.php';
 
 ?>
 
@@ -11,40 +12,82 @@ $isloggedin = false;
     <title>Health Advice Group</title>
     <link rel="stylesheet" type="text/css" href="bulma.css">
     <link rel="stylesheet" type="text/css" href="animate.css">
+    <style>
+        html {
+            color-scheme: light;
+        }
+
+        html.dark {
+            color-scheme: dark;
+        }
+
+        .darkBackground {
+            background-image:
+                linear-gradient(rgba(20, 22, 26, 0.1), rgba(20, 22, 26, 1)),
+                url('./assets/images/background.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .lightBackground {
+            background-image:
+                linear-gradient(rgba(249, 250, 251, 0.1), rgba(249, 250, 251, 1)),
+                url('./assets/images/background.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .lightConnector {
+            background-image:
+                linear-gradient(rgba(249, 250, 251, 0.1), rgba(249, 250, 251, 1));
+        }
+
+        .darkConnector {
+            background-image:
+                linear-gradient(rgba(20, 22, 26, 0.1), rgba(20, 22, 26, 1));
+        }
+    </style>
 </head>
 
 <body class="has-navbar-fixed-top">
 
     <?php require './includes/navbar.php'; ?>
 
-    <section class="hero is-fullheight-with-navbar has-background"
-        style="background-image: linear-gradient(rgba(20, 22, 26, 0.1), rgba(20, 22, 26, 1)), url('./assets/images/background.jpg'); background-size: cover; background-position: center;">
+    <section class="hero is-fullheight-with-navbar has-background">
         <div class="hero-body">
-            <div class="container theme-dark has-text-centered">
-                <h1 class="title is-1 animate__animated animate__flipInX animate__slower">Welcome to Health Advice Group
+            <div class="container  has-text-centered">
+                <h1 class="title is-1 animate__animated animate__flipInX animate__slower"
+                    style="text-shadow: 2px 2px 4px rgba(20, 22, 26, 0.5);">Welcome to Health Advice Group
                 </h1>
-                <p class="subtitle is-3 animate__animated animate__flipInY animate__delay-1s">
+                <p class="subtitle is-3 animate__animated animate__flipInY animate__delay-1s"
+                    style="text-shadow: 2px 2px 4px rgba(20, 22, 26, 0.5);">
                     Your health is our priority.
                 </p>
-                <?php if ($isloggedin): ?>
+                <?php if (isLoggedIn()): ?>
                     <a href="dashboard.php"
                         class="button is-primary is-large animate__animated animate__fadeInUp animate__delay-1s">Go to your
                         Dashboard<img src="./assets/icons/arrow.png" width="25px" height="25px"
                             style="margin-left: 10px; margin-top: 1px;"></a>
                 <?php else: ?>
                     <a href="signup.php"
-                        class="button is-info is-large animate__animated animate__fadeInUp animate__delay-1s">Sign up now
+                        class="button is-info is-large animate__animated animate__fadeInUp animate__delay-1s"
+                        style="box-shadow: 4px 4px 8px rgba(20, 22, 26, 0.5);">Sign up now
                         for FREE!<img src="./assets/icons/arrow.png" width="25px" height="25px"
                             style="margin-left: 10px; margin-top: 1px;"></a>
                 <?php endif; ?>
             </div>
         </div>
-        <div class="hero-foot has-text-centered animate__animated animate__fadeInDown animate__delay-1s">
-            <p class="subtitle is-6 theme-dark">Scroll down to Learn More</p>
+        <div id="homeHeroFoot"
+            class="hero-foot has-text-centered animate__animated animate__fadeInDown animate__delay-1s">
+            <p class="subtitle is-6">Scroll down to Learn More</p>
             <img class="animate__animated " src="./assets/icons/arrow.png" width="50px" height="50px"
                 style="margin-bottom: 10px; filter: invert(1); transform: rotate(90deg) !important;">
         </div>
     </section>
+
+    <section id="connectorHome" class="section">
+    </section>
+
     <section id="homeabout" class="section animate__animated">
         <div class="container">
             <div class="columns is-vcentered">
@@ -177,18 +220,8 @@ $isloggedin = false;
             </div>
         </div>
     </section>
-    <footer class="footer">
-        <div class="content has-text-centered">
-            <p>&copy; 2025 Health Advice Group. All rights reserved.</p>
-            <div>
-                <p>
-                    <a href="terms.php">Terms and Conditions of Usage</a>
-                    <span style="border-left: 1px solid darkgrey; height: 8px; margin: 0px 8px 0px 4px;"></span>
-                    <a href="contactus.php">Contact Us</a>
-                </p>
-            </div>
-        </div>
-    </footer>
+
+    <?php require './includes/footer.php'; ?>
     <script type="text/javascript" src="general.js"></script>
 </body>
 
