@@ -1,5 +1,12 @@
 <?php
 
+////////////////////////////////////////////
+// This is the home page of the website. It contains a brief introduction to the website and its purpose, as well as some information
+// about the organization and its partners. It also includes some testimonials from customers who have used the website and found it helpful. 
+// Users can sign up for an account or log in to access their dashboard and get personalized health advice.
+////////////////////////////////////////////
+
+// Initialise the session and include required files
 session_start();
 require './includes/auth.php';
 
@@ -9,6 +16,8 @@ require './includes/auth.php';
 <html>
 
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Health Advice Group</title>
     <link rel="stylesheet" type="text/css" href="bulma.css">
     <link rel="stylesheet" type="text/css" href="animate.css">

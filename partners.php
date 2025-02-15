@@ -10,6 +10,8 @@ require './includes/auth.php';
 <html>
 
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Partners | Health Advice Group</title>
     <link rel="stylesheet" href="bulma.css">
     <link rel="stylesheet" href="animate.css">

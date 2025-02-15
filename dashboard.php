@@ -14,6 +14,8 @@ if (!isLoggedIn()) {
 <html>
 
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dashboard | Health Advice Group</title>
     <link rel="stylesheet" type="text/css" href="bulma.css">
     <link rel="stylesheet" type="text/css" href="animate.css">
