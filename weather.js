@@ -152,7 +152,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 				const selectedTime =
 					containerTime.querySelector(".has-text-warning");
 				if (selectedTime) {
-					selectedTime.parentElement.classList.remove("activeSelection");
+					selectedTime.parentElement.classList.remove(
+						"activeSelection"
+					);
 					selectedTime.classList.remove("has-text-warning");
 					containerTime
 						.querySelector(".has-background-warning")
@@ -181,7 +183,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 				const selectedDay =
 					containerDay.querySelector(".has-text-warning");
 				if (selectedDay) {
-					selectedDay.parentElement.classList.remove("activeSelection");
+					selectedDay.parentElement.classList.remove(
+						"activeSelection"
+					);
 					selectedDay.classList.remove("has-text-warning");
 					containerDay
 						.querySelector(".has-background-warning")
@@ -198,6 +202,21 @@ document.addEventListener("DOMContentLoaded", async () => {
 		});
 	});
 
+	function formatWeatherResult(index) {
+		return `
+		<strong>Temperature:</strong> ${weatherInfo.temperature[index]}°C <br>
+		<strong>Feels Like:</strong> ${weatherInfo.apparent_temperature[index]}°C <br>
+		<strong>Humidity:</strong> ${weatherInfo.humidity[index]}% <br>
+		<strong>UV Index:</strong> ${weatherInfo.uv_index[index]} <br>
+		`;
+	}
+
+	function formatAdviceResult(index) {
+		return `
+		You have no recommendations! Enjoy your day!
+		`;
+	}
+
 	function updateWeatherDetails(index) {
 		if (index === currentHour) {
 			document.getElementById("time-warning").innerHTML = ``;
@@ -206,15 +225,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 			Advice is based on the selected date and time, not the current date and time. Please keep this in mind!
 			`;
 		}
-		document.getElementById("weather-result").innerHTML = `
-		<strong>Temperature:</strong> ${weatherInfo.temperature[index]}°C <br>
-		<strong>Feels Like:</strong> ${weatherInfo.apparent_temperature[index]}°C <br>
-		<strong>Humidity:</strong> ${weatherInfo.humidity[index]}% <br>
-		<strong>UV Index:</strong> ${weatherInfo.uv_index[index]} <br>
-		`;
-		document.getElementById("advice-result").innerHTML = `
-		You have no recommendations! Enjoy your day!
-		`;
+		document.getElementById("weather-result").innerHTML = formatWeatherResult(index);
+		document.getElementById("advice-result").innerHTML = formatAdviceResult(index);
 	}
 
 	let timeSelected = currentHour;
