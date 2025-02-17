@@ -16,13 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	});
 
-	(document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
-		const $notification = $delete.parentNode;
-	
-		$delete.addEventListener('click', () => {
-		  $notification.parentNode.removeChild($notification);
-		});
-	  });
+	(document.querySelectorAll(".notification .delete") || []).forEach(
+		($delete) => {
+			const $notification = $delete.parentNode;
+			$delete.addEventListener("click", () => {
+				$notification.parentNode.removeChild($notification);
+			});
+		}
+	);
 
 	const html = document.querySelector("html");
 	const themeButton = document.getElementById("themeButton");
@@ -37,16 +38,13 @@ document.addEventListener("DOMContentLoaded", () => {
 			html.classList.add("theme-dark");
 			html.classList.add("dark");
 			if (logo) {
-				logo.innerHTML =
-					'<img width="150px" src="../assets/images/full_logo.png" alt="Logo" style="filter: invert(1);">';
+				logo.querySelector("img").classList.add("invert-colours");
 			}
 			if (themeButton) {
-				themeButton.innerHTML =
-					'<img width="25px" height="25px" src="../assets/icons/theme_switcher.png" alt="Theme" style="filter: invert(1);">';
+				themeButton.querySelector("img").classList.add("invert-colours");
 			}
 			if (aboutUsLogo) {
-				aboutUsLogo.innerHTML =
-					'<img src="./assets/images/full_logo.png" alt="Logo" style="filter: invert(1);">';
+				aboutUsLogo.querySelector("img").classList.add("invert-colours");
 			}
 			if (hero) {
 				hero.classList.remove("lightBackground");
@@ -61,16 +59,13 @@ document.addEventListener("DOMContentLoaded", () => {
 			html.classList.add("theme-light");
 			html.classList.remove("dark");
 			if (logo) {
-				logo.innerHTML =
-					'<img src="../assets/images/full_logo.png" width="150px" alt="Logo">';
+				logo.querySelector("img").classList.remove("invert-colours");
 			}
 			if (themeButton) {
-				themeButton.innerHTML =
-					'<img width="25px" height="25px" src="../assets/icons/theme_switcher.png" alt="Theme">';
+				themeButton.querySelector("img").classList.remove("invert-colours");
 			}
 			if (aboutUsLogo) {
-				aboutUsLogo.innerHTML =
-					'<img src="./assets/images/full_logo.png" alt="Logo">';
+				aboutUsLogo.querySelector("img").classList.remove("invert-colours");
 			}
 			if (hero) {
 				hero.classList.remove("darkBackground");
@@ -84,7 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	};
 
 	const storedTheme = localStorage.getItem("theme");
-
 	if (storedTheme) {
 		setTheme(storedTheme);
 	} else {
@@ -108,7 +102,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	const heroFoot = document.getElementById("homeHeroFoot");
-
 	if (heroFoot) {
 		heroFoot.addEventListener("animationend", () => {
 			heroFoot.classList.remove("animate__delay-1s");

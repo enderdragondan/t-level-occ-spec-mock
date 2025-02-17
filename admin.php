@@ -137,31 +137,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['confirmrevoke'])) {
     <link rel="stylesheet" href="bulma.css">
     <link rel="stylesheet" href="animate.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        html {
-            color-scheme: light;
-        }
-
-        html.dark {
-            color-scheme: dark;
-        }
-
-        .darkBackground {
-            background-image:
-                linear-gradient(rgba(20, 22, 26, 0.1), rgba(20, 22, 26, 1)),
-                url('./assets/images/background.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .lightBackground {
-            background-image:
-                linear-gradient(rgba(249, 250, 251, 0.1), rgba(249, 250, 251, 1)),
-                url('./assets/images/background.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-    </style>
+    <link rel="stylesheet" href="additional.css">
 </head>
 
 <body class="has-navbar-fixed-top">
@@ -171,8 +147,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['confirmrevoke'])) {
     <section class="hero is-fullheight-with-navbar">
         <div class="hero-body">
             <div class="container">
-                <h1 class="title is-1 has-text-centered animate__animated animate__flipInX animate__delay-1s"
-                    style="text-shadow: 2px 2px 4px rgba(20, 22, 26, 0.5);">
+                <h1
+                    class="title is-1 has-text-centered animate__animated animate__flipInX animate__delay-1s text-shadow-custom">
                     Admin Panel
                 </h1>
                 <div class="columns is-centered">

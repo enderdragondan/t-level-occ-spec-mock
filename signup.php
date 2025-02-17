@@ -70,31 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="bulma.css">
     <link rel="stylesheet" href="animate.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        html {
-            color-scheme: light;
-        }
-
-        html.dark {
-            color-scheme: dark;
-        }
-
-        .darkBackground {
-            background-image:
-                linear-gradient(rgba(20, 22, 26, 0.1), rgba(20, 22, 26, 1)),
-                url('./assets/images/background.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .lightBackground {
-            background-image:
-                linear-gradient(rgba(249, 250, 251, 0.1), rgba(249, 250, 251, 1)),
-                url('./assets/images/background.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-    </style>
+    <link rel="stylesheet" href="additional.css">
 </head>
 
 <body class="has-navbar-fixed-top">
@@ -104,8 +80,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <section class="hero is-fullheight-with-navbar has-background">
         <div class="hero-body">
             <div class="container">
-                <h1 class="title is-1 has-text-centered animate__animated animate__flipInX animate__delay-1s"
-                    style="text-shadow: 2px 2px 4px rgba(20, 22, 26, 0.5);">
+                <h1
+                    class="title is-1 has-text-centered animate__animated animate__flipInX animate__delay-1s text-shadow-custom">
                     Sign Up
                 </h1>
                 <div class="columns is-centered">
@@ -114,8 +90,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="field">
                                 <label for="firstname" class="label">First Name</label>
                                 <div class="control has-icons-left">
-                                    <input type="text" name="firstname" id="firstname" placeholder="e.g. John" class="input" required
-                                        minlength="2" maxlength="64">
+                                    <input type="text" name="firstname" id="firstname" placeholder="e.g. John"
+                                        class="input" required minlength="2" maxlength="64">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-user"></i>
                                     </span>
@@ -124,8 +100,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="field">
                                 <label for="lastname" class="label">Last Name</label>
                                 <div class="control has-icons-left">
-                                    <input type="text" name="lastname" id="lastname" placeholder="e.g. Doe" class="input" required
-                                        minlength="2" maxlength="64">
+                                    <input type="text" name="lastname" id="lastname" placeholder="e.g. Doe"
+                                        class="input" required minlength="2" maxlength="64">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-user"></i>
                                     </span>
@@ -134,8 +110,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="field">
                                 <label for="username" class="label">Username</label>
                                 <div class="control has-icons-left">
-                                    <input type="text" name="username" id="username" placeholder="e.g. johndoe123" class="input"
-                                        minlength="3" maxlength="16" required autocomplete="username">
+                                    <input type="text" name="username" id="username" placeholder="e.g. johndoe123"
+                                        class="input" minlength="3" maxlength="16" required autocomplete="username">
                                     <span class="icon is-small is-left">
                                         <i class="far fa-user-circle"></i>
                                     </span>
@@ -144,8 +120,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="field">
                                 <label for="password" class="label">Password</label>
                                 <div class="control has-icons-left">
-                                    <input type="password" name="password" id="password" placeholder="*******" class="input"
-                                        minlength="8" maxlength="64" required>
+                                    <input type="password" name="password" id="password" placeholder="*******"
+                                        class="input" minlength="8" maxlength="64" required>
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-lock"></i>
                                     </span>
@@ -154,8 +130,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="field">
                                 <label for="password2" class="label">Confirm Password</label>
                                 <div class="control has-icons-left">
-                                    <input type="password" name="password2" id="password2" placeholder="*******" class="input" required
-                                        minlength="8" maxlength="64">
+                                    <input type="password" name="password2" id="password2" placeholder="*******"
+                                        class="input" required minlength="8" maxlength="64">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-lock"></i>
                                     </span>
@@ -177,8 +153,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="field">
                                 <label for="securityA" class="label">Security Answer</label>
                                 <div class="control has-icons-left">
-                                    <input type="text" name="securityA" id="securityA" placeholder="Type your answer..." class="input"
-                                        required minlength="3" maxlength="64" autocomplete="off">
+                                    <input type="text" name="securityA" id="securityA" placeholder="Type your answer..."
+                                        class="input" required minlength="3" maxlength="64" autocomplete="off">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-question"></i>
                                     </span>

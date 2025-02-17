@@ -4,7 +4,7 @@
         <div>
             <p>
                 <a href="#a">Terms and Conditions of Usage</a>
-                <span style="border-left: 1px solid darkgrey; height: 8px; margin: 0px 8px 0px 4px;"></span>
+                <span class="divider"></span>
                 <a href="#a">Contact Us</a>
             </p>
         </div>

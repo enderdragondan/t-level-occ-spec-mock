@@ -5,7 +5,6 @@ require './includes/auth.php';
 
 ?>
 
-
 <!DOCTYPE html>
 <html>
 
@@ -15,31 +14,7 @@ require './includes/auth.php';
     <title>Partners | Health Advice Group</title>
     <link rel="stylesheet" href="bulma.css">
     <link rel="stylesheet" href="animate.css">
-    <style>
-        html {
-            color-scheme: light;
-        }
-
-        html.dark {
-            color-scheme: dark;
-        }
-
-        .darkBackground {
-            background-image:
-                linear-gradient(rgba(20, 22, 26, 0.1), rgba(20, 22, 26, 1)),
-                url('./assets/images/background.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .lightBackground {
-            background-image:
-                linear-gradient(rgba(249, 250, 251, 0.1), rgba(249, 250, 251, 1)),
-                url('./assets/images/background.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-    </style>
+    <link rel="stylesheet" href="additional.css">
 </head>
 
 <body class="has-navbar-fixed-top">
@@ -49,8 +24,9 @@ require './includes/auth.php';
     <section class="hero is-fullheight-with-navbar has-background">
         <div class="hero-body">
             <div class="container has-text-centered">
-                <h2 class="title is-1 has-text-centered animate__animated animate__flipInY animate__delay-1s"
-                    style="text-shadow: 2px 2px 4px rgba(20, 22, 26, 0.5);">Our Partners</h2>
+                <h2
+                    class="title is-1 has-text-centered animate__animated animate__flipInY animate__delay-1s text-shadow-custom">
+                    Our Partners</h2>
                 <div class=" columns is-multiline is-centered">
                     <div class="column is-4">
                         <div class="card animate__animated animate__fadeInLeft">

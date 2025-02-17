@@ -1,0 +1,89 @@
+.text-shadow-custom {
+    text-shadow: 2px 2px 4px rgba(20, 22, 26, 0.5);
+}
+
+.overflow-auto {
+    overflow-x: auto;
+}
+
+.invert-colours {
+    filter: invert(1);
+}
+
+.btn-shadow {
+    box-shadow: 4px 4px 8px rgba(20, 22, 26, 0.5);
+}
+
+.divider {
+    border-left: 1px solid darkgrey;
+    height: 8px;
+    margin: 0 8px 0 4px;
+    display: inline-block;
+}
+
+html {
+    color-scheme: light;
+}
+
+html.dark {
+    color-scheme: dark;
+}
+
+.darkBackground {
+    background-image:
+        linear-gradient(rgba(20, 22, 26, 0.1), rgba(20, 22, 26, 1)),
+        url('./assets/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.lightBackground {
+    background-image:
+        linear-gradient(rgba(249, 250, 251, 0.1), rgba(249, 250, 251, 1)),
+        url('./assets/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.lightConnector {
+    background-image:
+        linear-gradient(rgba(249, 250, 251, 0.1), rgba(249, 250, 251, 1));
+}
+
+.darkConnector {
+    background-image:
+        linear-gradient(rgba(20, 22, 26, 0.1), rgba(20, 22, 26, 1));
+}
+
+.activeSelection {
+    display: inline;
+    transition: all 0.1s ease;
+    transform: scale(1.05);
+}
+
+.icon-gap {
+    margin-left: 10px;
+    margin-top: 1px;
+}
+.min-width-max {
+    min-width: max-content;
+}
+.ml-50 {
+    margin-left: 50px;
+}
+.mr-50 {
+    margin-right: 50px;
+}
+.day-item {
+    width: 80px;
+    flex-shrink: 0;
+}
+.time-item {
+    width: 70px;
+    margin-right: 25px;
+    flex-shrink: 0;
+}
+.recover-link {
+    margin-top: 10px;
+    text-decoration: underline;
+}

@@ -225,8 +225,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 			Advice is based on the selected date and time, not the current date and time. Please keep this in mind!
 			`;
 		}
-		document.getElementById("weather-result").innerHTML = formatWeatherResult(index);
-		document.getElementById("advice-result").innerHTML = formatAdviceResult(index);
+		document.getElementById("weather-result").innerHTML =
+			formatWeatherResult(index);
+		document.getElementById("advice-result").innerHTML =
+			formatAdviceResult(index);
 	}
 
 	let timeSelected = currentHour;

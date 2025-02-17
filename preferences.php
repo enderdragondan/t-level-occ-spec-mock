@@ -32,16 +32,16 @@ if ($stmt === false) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['save'])) {
-    $hayFever = (int)$_POST['hayFever'];
-    $asthma = (int)$_POST['asthma'];
-    $heart = (int)$_POST['heart'];
-    $heat = (int)$_POST['heat'];
-    $cold = (int)$_POST['cold'];
-    $skin = (int)$_POST['skin'];
-    $migraines = (int)$_POST['migraines'];
-    $jointPain = (int)$_POST['jointPain'];
-    $dustMold = (int)$_POST['dustMold'];
-    $heatstroke = (int)$_POST['heatstroke'];
+    $hayFever = (int) $_POST['hayFever'];
+    $asthma = (int) $_POST['asthma'];
+    $heart = (int) $_POST['heart'];
+    $heat = (int) $_POST['heat'];
+    $cold = (int) $_POST['cold'];
+    $skin = (int) $_POST['skin'];
+    $migraines = (int) $_POST['migraines'];
+    $jointPain = (int) $_POST['jointPain'];
+    $dustMold = (int) $_POST['dustMold'];
+    $heatstroke = (int) $_POST['heatstroke'];
 
     $sql = "UPDATE users SET hayFever = ?, asthma = ?, heart = ?, heat = ?, cold = ?, skin = ?, migraines = ?, jointPain = ?, dustMold = ?, heatstroke = ? WHERE username = ?";
     $stmt = mysqli_prepare($conn, $sql);
@@ -71,42 +71,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['save'])) {
     <title>Preferences | Health Advice Group</title>
     <link rel="stylesheet" href="bulma.css">
     <link rel="stylesheet" href="animate.css">
-    <style>
-        html {
-            color-scheme: light;
-        }
-
-        html.dark {
-            color-scheme: dark;
-        }
-
-        .darkBackground {
-            background-image:
-                linear-gradient(rgba(20, 22, 26, 0.1), rgba(20, 22, 26, 1)),
-                url('./assets/images/background.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .lightBackground {
-            background-image:
-                linear-gradient(rgba(249, 250, 251, 0.1), rgba(249, 250, 251, 1)),
-                url('./assets/images/background.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-    </style>
+    <link rel="stylesheet" href="additional.css">
 </head>
 
 <body class="has-navbar-fixed-top">
 
-    <?php require 'includes/navbar.php'; ?>
+    <?php require './includes/navbar.php'; ?>
 
     <section class="hero is-fullheight-with-navbar">
         <div class="hero-body">
             <div class="container has-text-centered">
-                <h2 class="title is-1 has-text-centered animate__animated animate__fadeIn"
-                    style="text-shadow: 2px 2px 4px rgba(20, 22, 26, 0.5);">Preferences</h2>
+                <h2 class="title is-1 has-text-centered animate__animated animate__fadeIn text-shadow-custom">
+                    Preferences</h2>
                 <div class="columns is-centered">
                     <div class="column is-6">
                         <form method="POST" class="box animate__animated animate__fadeIn">
